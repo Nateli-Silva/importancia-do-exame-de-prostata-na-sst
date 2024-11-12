@@ -1,3 +1,4 @@
+
 function checkAnswers() {
     const form = document.getElementById("quizForm");
     const answers = ["certa", "certa", "certa", "certa", "certa"]; // Respostas corretas
