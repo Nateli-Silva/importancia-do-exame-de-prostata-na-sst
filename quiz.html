@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz sobre Saúde e Segurança no Trabalho</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Conteúdo do Quiz -->
+  <div class="container">
+    <h1>Quiz: Saúde e Segurança no Trabalho</h1>
+    <form id="quizForm">
+      <!-- Pergunta 1 -->
+      <div class="question">
+        <h3>1. O exame de próstata é indicado para homens a partir de qual idade?</h3>
+        <label><input type="radio" name="q1" value="errada"> 40 anos</label><br>
+        <label><input type="radio" name="q1" value="certa"> 50 anos</label><br>
+        <label><input type="radio" name="q1" value="errada"> 60 anos</label>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="question">
+        <h3>2. Qual é o objetivo principal do exame de próstata dentro da SST?</h3>
+        <label><input type="radio" name="q2" value="certa"> Prevenir doenças e manter a saúde do trabalhador</label><br>
+        <label><input type="radio" name="q2" value="errada"> Aumentar a carga de trabalho</label><br>
+        <label><input type="radio" name="q2" value="errada"> Reduzir os dias de férias</label>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="question">
+        <h3>3. Qual exame ajuda a detectar o câncer de próstata?</h3>
+        <label><input type="radio" name="q3" value="errada"> Exame de sangue simples</label><br>
+        <label><input type="radio" name="q3" value="certa"> Exame de PSA e toque retal</label><br>
+        <label><input type="radio" name="q3" value="errada"> Exame de urina</label>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="question">
+        <h3>4. O que significa SST no ambiente de trabalho?</h3>
+        <label><input type="radio" name="q4" value="certa"> Saúde e Segurança no Trabalho</label><br>
+        <label><input type="radio" name="q4" value="errada"> Serviço Social Trabalhista</label><br>
+        <label><input type="radio" name="q4" value="errada"> Supervisão de Segurança Técnica</label>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="question">
+        <h3>5. Qual destes é um objetivo da SST?</h3>
+        <label><input type="radio" name="q5" value="certa"> Reduzir acidentes e doenças ocupacionais</label><br>
+        <label><input type="radio" name="q5" value="errada"> Aumentar a jornada de trabalho</label><br>
+        <label><input type="radio" name="q5" value="errada"> Elevar o nível de estresse dos funcionários</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Verificar Respostas</button>
+    </form>
+
+    <!-- Imagens de Resultado -->
+    <div  id="resultMessage"></div>
+    <img id="correctImg" src="asset/Today (1).jpg" alt="Parabéns! Você acertou!" style="display: none;">
+    <img id="wrongImg" src="asset/Today.jpg" alt="Não foi dessa vez. Tente novamente!" style="display: none;">
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById("quizForm");
+      const answers = ["certa", "certa", "certa", "certa", "certa"]; // Respostas corretas
+      let score = 0;
+
+      // Verificar respostas do usuário
+      answers.forEach((answer, index) => {
+        const question = form[`q${index + 1}`];
+        if (question.value === answer) {
+          score++;
+        }
+      });
+
+      // Exibir mensagem e imagem de acordo com o número de acertos
+      const resultMessage = document.getElementById("resultMessage");
+      const correctImg = document.getElementById("correctImg");
+      const wrongImg = document.getElementById("wrongImg");
+
+      if (score === answers.length) {
+        resultMessage.textContent = "Parabéns! Você acertou todas as respostas!";
+        correctImg.style.display = "block";
+        wrongImg.style.display = "none";
+      } else {
+        resultMessage.textContent = `Você acertou ${score} de ${answers.length} questões. Tente novamente!`;
+        correctImg.style.display = "none";
+        wrongImg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
