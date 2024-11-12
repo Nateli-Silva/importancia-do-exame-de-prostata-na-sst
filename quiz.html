@@ -57,8 +57,8 @@
 
     <!-- Imagens de Resultado -->
     <div  id="resultMessage"></div>
-    <img id="correctImg" src="asset/Today (1).jpg" alt="Parabéns! Você acertou!" style="display: none;">
-    <img id="wrongImg" src="asset/Today.jpg" alt="Não foi dessa vez. Tente novamente!" style="display: none;">
+    <img id="correctImg" src="asset/transferir (4).jpeg" alt="Parabéns! Você acertou!" style="display: none;">
+    <img id="wrongImg" src="asset/Wedding photo.jpeg" alt="Não foi dessa vez. Tente novamente!" style="display: none;">
   </div>
 
   <script>
@@ -81,11 +81,11 @@
       const wrongImg = document.getElementById("wrongImg");
 
       if (score === answers.length) {
-        resultMessage.textContent = "Parabéns! Você acertou todas as respostas!";
+        resultMessage.textContent = "Parabéns, você está bem informado e conseguiu proteger o seu precioso.";
         correctImg.style.display = "block";
         wrongImg.style.display = "none";
       } else {
-        resultMessage.textContent = `Você acertou ${score} de ${answers.length} questões. Tente novamente!`;
+        resultMessage.textContent = `Você acertou ${score} de ${answers.length} questões. Foi quase, fique atento às informações e proteja o seu precioso.`;
         correctImg.style.display = "none";
         wrongImg.style.display = "block";
       }

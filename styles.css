@@ -50,6 +50,14 @@ p {
   margin-bottom: 15px;
 }
 
+#resultMessage {
+  font-size: 24px; /* Aumenta o tamanho da fonte */
+  font-weight: bold; /* Torna o texto mais chamativo */
+  color: #333; /* Escolha a cor que preferir */
+  text-align: center; /* Centraliza o texto */
+  margin-top: 20px; /* Adiciona um pouco de espaço no topo */
+}
+
 .btn {
   display: inline-block;
   background-color: #143ebc;
