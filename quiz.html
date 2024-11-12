@@ -10,7 +10,10 @@
 
   <!-- Conteúdo do Quiz -->
   <div class="container">
-    <h1>Quiz: Saúde e Segurança no Trabalho</h1>
+    <header>
+      <h1>Quiz: Saúde e Segurança no Trabalho</h1>
+    </header>
+    
     <form id="quizForm">
       <!-- Pergunta 1 -->
       <div class="question">
@@ -56,40 +59,11 @@
     </form>
 
     <!-- Imagens de Resultado -->
-    <div  id="resultMessage"></div>
+    <div id="resultMessage"></div>
     <img id="correctImg" src="https://i.pinimg.com/236x/f3/d4/f9/f3d4f92ff95d19d59b07b60ec4a221c7.jpg" alt="Parabéns! Você acertou!" style="display: none;">
     <img id="wrongImg" src="https://i.pinimg.com/736x/6c/2f/1b/6c2f1bddd661de8452a1897a29aec443.jpg" alt="Não foi dessa vez. Tente novamente!" style="display: none;">
   </div>
 
-  <script>
-    function checkAnswers() {
-      const form = document.getElementById("quizForm");
-      const answers = ["certa", "certa", "certa", "certa", "certa"]; // Respostas corretas
-      let score = 0;
-
-      // Verificar respostas do usuário
-      answers.forEach((answer, index) => {
-        const question = form[`q${index + 1}`];
-        if (question.value === answer) {
-          score++;
-        }
-      });
-
-      // Exibir mensagem e imagem de acordo com o número de acertos
-      const resultMessage = document.getElementById("resultMessage");
-      const correctImg = document.getElementById("correctImg");
-      const wrongImg = document.getElementById("wrongImg");
-
-      if (score === answers.length) {
-        resultMessage.textContent = "Parabéns, você está bem informado e conseguiu proteger o seu precioso.";
-        correctImg.style.display = "block";
-        wrongImg.style.display = "none";
-      } else {
-        resultMessage.textContent = `Você acertou ${score} de ${answers.length} questões. Foi quase, fique atento às informações e proteja o seu precioso.`;
-        correctImg.style.display = "none";
-        wrongImg.style.display = "block";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
